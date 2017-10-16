@@ -25,11 +25,9 @@ public class DateFormatTest {
 
     @Parameterized.Parameters
     public static Collection primeNumbers() {
-        return Arrays.asList(new String[]{
-                "2017-10-15",
+        return Arrays.asList("2017-10-15",
                 "2017-10-15 16:00:02",
-                "2017年10月15日 16时00分02秒"
-        });
+                "2017年10月15日 16时00分02秒");
     }
 
     @Test(expected = ParseException.class)

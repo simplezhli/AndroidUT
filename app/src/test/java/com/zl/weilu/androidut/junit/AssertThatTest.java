@@ -1,5 +1,6 @@
 package com.zl.weilu.androidut.junit;
 
+import org.junit.Rule;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.*;
@@ -11,6 +12,14 @@ import static org.junit.Assert.assertThat;
  */
 
 public class AssertThatTest {
+
+    @Rule
+    public MyRule rule = new MyRule();
+
+    @Test
+    public void testMobilePhone() throws Exception {
+        assertThat("13588888888", new IsMobilePhoneMatcher());
+    }
 
     @Test
     public void testAssertThat1() throws Exception {
@@ -25,11 +34,5 @@ public class AssertThatTest {
     @Test
     public void testAssertThat3() throws Exception {
         assertThat("Hello UT", both(startsWith("Hello")).and(endsWith("AUT")));
-    }
-
-    @Test
-    public void testMobilePhone() throws Exception {
-        assertThat("13588888888", new IsMobilePhoneMatcher());
-
     }
 }
