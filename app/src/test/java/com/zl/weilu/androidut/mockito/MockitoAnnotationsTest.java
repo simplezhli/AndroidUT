@@ -21,7 +21,7 @@ public class MockitoAnnotationsTest {
     Person mPerson;
 
     @Before
-    public void setupAccountData(){
+    public void setup(){
         MockitoAnnotations.initMocks(this); //<--初始化
     }
 

@@ -4,21 +4,20 @@ import com.zl.weilu.androidut.bean.Person;
 
 import org.junit.Rule;
 import org.junit.Test;
-import org.mockito.Mock;
-import org.mockito.junit.MockitoJUnit;
-import org.mockito.junit.MockitoRule;
+import org.mockito.Spy;
+import org.mockito.junit.*;
 
 import static org.junit.Assert.assertNotNull;
 
 /**
- * @Description: MockitoRule方式Mock
+ * @Description: Spy示例
  * @Author: weilu
- * @Time: 2017/11/4 14:43.
+ * @Time: 2017/11/4 19:12.
  */
 
-public class MockitoRuleTest {
+public class MockitoSpyTest {
 
-    @Mock 
+    @Spy
     Person mPerson;
 
     @Rule
@@ -28,5 +27,11 @@ public class MockitoRuleTest {
     public void testIsNotNull(){
         assertNotNull(mPerson);
     }
-   
+
+    @Test
+    public void testPersonSpy(){
+        //输出11
+        System.out.print(mPerson.getAge());
+    }
+
 }
