@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    buildToolsVersion "26.0.2"
     defaultConfig {
         applicationId "com.zl.weilu.androidut"
         minSdkVersion 15
@@ -20,7 +20,13 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support:appcompat-v7:25.4.0'
     testCompile 'junit:junit:4.12'
-    testCompile "org.mockito:mockito-core:2.11.0"
+    testCompile "org.mockito:mockito-core:2.8.9"
+
+    testCompile "org.powermock:powermock-module-junit4:1.7.3"
+    testCompile "org.powermock:powermock-module-junit4-rule:1.7.3"
+    testCompile "org.powermock:powermock-api-mockito2:1.7.3"
+//    testCompile "org.powermock:powermock-classloading-xstream:1.7.3"
+
 }
