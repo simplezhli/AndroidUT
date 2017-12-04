@@ -8,3 +8,5 @@
 
 - [Android单元测试(三)：PowerMock框架的使用](http://blog.csdn.net/qq_17766199/article/details/78573390)
 
+- [Android单元测试(四)：Robolectric框架的使用](http://blog.csdn.net/qq_17766199/article/details/78710177)
+

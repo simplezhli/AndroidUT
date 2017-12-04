@@ -1,4 +1,4 @@
-package com.zl.weilu.androidut.robolectric;
+package com.zl.weilu.androidut.robolectric.ui;
 
 import android.app.AlertDialog;
 import android.app.Application;
@@ -13,6 +13,8 @@ import com.zl.weilu.androidut.R;
 import com.zl.weilu.androidut.ui.LoginActivity;
 import com.zl.weilu.androidut.ui.MainActivity;
 import com.zl.weilu.androidut.ui.fragment.SampleFragment;
+
+import junit.framework.Assert;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -86,6 +88,8 @@ public class MainActivityTest {
     @Test
     public void testJump() throws Exception {
 
+        Assert.assertEquals(mJumpBtn.getText().toString(), "Activity跳转");
+        
         // 触发按钮点击
         mJumpBtn.performClick();
 

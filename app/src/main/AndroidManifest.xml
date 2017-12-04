@@ -22,6 +22,19 @@
 
         <activity android:name=".ui.LoginActivity"/>
 
+        <receiver
+            android:name=".broadcast.MyReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.zl.weilu.androidut" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:exported="false"
+            android:name=".service.MyService"/>
+        
     </application>
 
 </manifest>
