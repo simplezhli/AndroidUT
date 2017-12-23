@@ -33,6 +33,8 @@ dependencies {
     //robolectric
     testCompile "org.robolectric:robolectric:3.5.1"
     testCompile 'org.robolectric:shadows-support-v4:3.4-rc2'
+    //mockwebserver
+    testCompile 'com.squareup.okhttp3:mockwebserver:3.9.1'
     //RxJava
     compile 'io.reactivex.rxjava2:rxjava:2.1.7'
     //RxAndroid
@@ -47,5 +49,6 @@ dependencies {
         exclude module: 'rxjava'
     }
     compile "com.squareup.retrofit2:converter-gson:2.3.0"
-    compile "com.elvishew:xlog:1.3.0"
+
+    compile "com.elvishew:xlog:1.4.0"
 }
