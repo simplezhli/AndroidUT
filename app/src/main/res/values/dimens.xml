@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="tab_height">48dp</dimen>
+    <dimen name="activity_left_margin">14dp</dimen>
+    <dimen name="activity_right_margin">14dp</dimen>
+    <dimen name="activity_left_padding">14dp</dimen>
+    <dimen name="activity_right_padding">14dp</dimen>
+
+    <dimen name="dp_line_04">0.4dp</dimen>
+    <dimen name="textSize_10sp">10sp</dimen>
+    <dimen name="textSize_12sp">12sp</dimen>
+    <dimen name="textSize_14sp">14sp</dimen>
+    <dimen name="textSize_16sp">16sp</dimen>
+    <dimen name="textSize_18sp">18sp</dimen>
+    <dimen name="textSize_20sp">18sp</dimen>
+
+    <dimen name="dp_item_48">48dp</dimen>
+
+</resources>

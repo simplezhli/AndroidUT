@@ -12,4 +12,6 @@
 
 - [Android单元测试(五)：网络接口测试](http://blog.csdn.net/qq_17766199/article/details/78881992)
 
+- [Android单元测试(六)：RxJava测试](http://blog.csdn.net/qq_17766199/article/details/78989664)
+
 

@@ -3,4 +3,13 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="main_color">#ef416d</color>
+    <color name="divider">#d9d9d9</color>
+    <color name="text_main">#ababab</color>
+    <color name="text_default">#474747</color>
+    <color name="text_secondary">#808080</color>
+    <color name="text_end">#b3b3b3</color>
+
+    <color name="white">#ffffff</color>
 </resources>

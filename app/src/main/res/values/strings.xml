@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">AndroidUT</string>
+
+    <string name="login">登录</string>
+    <string name="login_mobile">手机号</string>
+    <string name="login_mobile_hint">请输入您的手机号</string>
+    <string name="login_identify">验证码</string>
+    <string name="login_identify_hint">请输入您的验证码</string>
+    <string name="login_mobile_login">手机登录</string>
+    <string name="login_send_identify">发送验证码</string>
 </resources>

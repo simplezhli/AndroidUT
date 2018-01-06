@@ -22,7 +22,9 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".ui.LoginActivity"/>
+        <activity
+            android:label="@string/login"
+            android:name=".ui.LoginActivity"/>
 
         <receiver
             android:name=".broadcast.MyReceiver"
