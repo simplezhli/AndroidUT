@@ -36,7 +36,12 @@ public class RxJavaRule implements TestRule {
                     }
                 });
 
-                base.evaluate();
+                try {
+                    base.evaluate();
+                } finally {
+                    RxJavaPlugins.reset();
+                    RxAndroidPlugins.reset();
+                }
             }
         };
     }

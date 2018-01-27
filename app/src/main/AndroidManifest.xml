@@ -26,6 +26,10 @@
             android:label="@string/login"
             android:name=".ui.LoginActivity"/>
 
+        <activity
+            android:label="@string/login"
+            android:name=".ui.mvp.LoginMVPActivity"/>
+
         <receiver
             android:name=".broadcast.MyReceiver"
             android:enabled="true"

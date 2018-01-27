@@ -14,4 +14,6 @@
 
 - [Android单元测试(六)：RxJava测试](http://blog.csdn.net/qq_17766199/article/details/78989664)
 
+- [Android单元测试(七)：MVP与单元测试](http://blog.csdn.net/qq_17766199/article/details/79183901)
+
 
