@@ -30,7 +30,11 @@ public class LoggingInterceptor implements Interceptor {
                 response.request().url(), (t2 - t1) / 1e6d, response.headers()));
         okhttp3.MediaType mediaType = response.body().contentType();
         String content = response.body().string();
-        XLog.json(content);
+        try {
+            XLog.json(content);
+        } catch (Exception e) {
+            XLog.d(content);
+        }
         return response.newBuilder()
                 .body(okhttp3.ResponseBody.create(mediaType, content))
                 .build();

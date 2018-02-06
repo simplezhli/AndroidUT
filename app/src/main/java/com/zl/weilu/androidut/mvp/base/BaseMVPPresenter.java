@@ -1,4 +1,4 @@
-package com.zl.weilu.androidut.base;
+package com.zl.weilu.androidut.mvp.base;
 
 import java.lang.ref.Reference;
 import java.lang.ref.WeakReference;

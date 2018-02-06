@@ -2,8 +2,8 @@ package com.zl.weilu.androidut.mvp;
 
 import com.zl.weilu.androidut.BuildConfig;
 import com.zl.weilu.androidut.rxjava.RxJavaTestSchedulerRule;
-import com.zl.weilu.androidut.ui.mvp.LoginMvpView;
-import com.zl.weilu.androidut.ui.mvp.LoginPresenter;
+import com.zl.weilu.androidut.mvp.ui.LoginMvpView;
+import com.zl.weilu.androidut.mvp.ui.LoginPresenter;
 
 import org.junit.Before;
 import org.junit.Rule;

@@ -1,10 +1,15 @@
-package com.zl.weilu.androidut.ui.mvp;
+package com.zl.weilu.androidut.dagger.ui;
 
-import com.zl.weilu.androidut.base.BaseMVPPresenter;
+
+import com.zl.weilu.androidut.mvp.base.BaseMVPPresenter;
 import com.zl.weilu.androidut.bean.User;
-import com.zl.weilu.androidut.net.GithubService;
+import com.zl.weilu.androidut.dagger.base.scope.ActivityScope;
+import com.zl.weilu.androidut.net.GithubApi;
+import com.zl.weilu.androidut.mvp.ui.LoginMvpView;
 
 import java.util.concurrent.TimeUnit;
+
+import javax.inject.Inject;
 
 import io.reactivex.Observable;
 import io.reactivex.Observer;
@@ -17,10 +22,18 @@ import io.reactivex.observers.DisposableObserver;
 import io.reactivex.schedulers.Schedulers;
 
 /**
- * Created by weilu on 2018/1/27.
+ * Created by weilu on 2018/2/5.
  */
 
-public class LoginPresenter extends BaseMVPPresenter<LoginMvpView>{
+@ActivityScope
+public class LoginDaggerPresenter extends BaseMVPPresenter<LoginMvpView> {
+
+    private GithubApi mApi;
+
+    @Inject
+    LoginDaggerPresenter(GithubApi mApi){
+        this.mApi = mApi;
+    }
 
     private CompositeDisposable mCompositeDisposable = new CompositeDisposable();
 
@@ -34,6 +47,7 @@ public class LoginPresenter extends BaseMVPPresenter<LoginMvpView>{
                     public void onComplete() {
                         mMvpView.countdownComplete();
                     }
+                    
                     @Override
                     public void onError(Throwable e) {
                         mMvpView.showToast("倒计时出现错误！");
@@ -57,8 +71,7 @@ public class LoginPresenter extends BaseMVPPresenter<LoginMvpView>{
             return;
         }
 
-        GithubService.createGithubService()
-                .getUser("simplezhli")
+        mApi.getUser("simplezhli")
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .doOnSubscribe(new Consumer<Disposable>() {
@@ -105,5 +118,4 @@ public class LoginPresenter extends BaseMVPPresenter<LoginMvpView>{
         super.detachView();
         mCompositeDisposable.clear();
     }
-
 }

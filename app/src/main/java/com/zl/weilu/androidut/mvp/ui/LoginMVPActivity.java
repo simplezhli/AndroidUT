@@ -1,4 +1,4 @@
-package com.zl.weilu.androidut.ui.mvp;
+package com.zl.weilu.androidut.mvp.ui;
 
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -7,7 +7,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.zl.weilu.androidut.R;
-import com.zl.weilu.androidut.base.BaseMVPActivity;
+import com.zl.weilu.androidut.mvp.base.BaseMVPActivity;
 
 public class LoginMVPActivity extends BaseMVPActivity<LoginMvpView, LoginPresenter> implements LoginMvpView, View.OnClickListener{
 

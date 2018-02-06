@@ -1,6 +1,6 @@
-package com.zl.weilu.androidut.ui.mvp;
+package com.zl.weilu.androidut.mvp.ui;
 
-import com.zl.weilu.androidut.base.MvpView;
+import com.zl.weilu.androidut.mvp.base.MvpView;
 
 /**
  * Created by weilu on 2018/1/27.

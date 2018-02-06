@@ -28,7 +28,11 @@
 
         <activity
             android:label="@string/login"
-            android:name=".ui.mvp.LoginMVPActivity"/>
+            android:name=".mvp.ui.LoginMVPActivity"/>
+
+        <activity
+            android:label="@string/login"
+            android:name=".dagger.ui.LoginDaggerActivity"/>
 
         <receiver
             android:name=".broadcast.MyReceiver"

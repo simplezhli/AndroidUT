@@ -7,7 +7,7 @@ import android.widget.TextView;
 import com.zl.weilu.androidut.BuildConfig;
 import com.zl.weilu.androidut.R;
 import com.zl.weilu.androidut.rxjava.RxJavaTestSchedulerRule;
-import com.zl.weilu.androidut.ui.mvp.LoginMVPActivity;
+import com.zl.weilu.androidut.mvp.ui.LoginMVPActivity;
 
 import org.junit.Before;
 import org.junit.Rule;

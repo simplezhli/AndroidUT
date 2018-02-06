@@ -1,15 +1,15 @@
 package com.zl.weilu.androidut.ui;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.Toast;
 
 import com.zl.weilu.androidut.R;
-import com.zl.weilu.androidut.ui.mvp.LoginMVPActivity;
+import com.zl.weilu.androidut.dagger.ui.LoginDaggerActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,7 +29,9 @@ public class MainActivity extends AppCompatActivity {
 
         //startActivity(new Intent(this, LoginActivity.class));
 
-        startActivity(new Intent(this, LoginMVPActivity.class));
+//        startActivity(new Intent(this, LoginMVPActivity.class));
+
+        startActivity(new Intent(this, LoginDaggerActivity.class));
     }
 
     public void showToast(View view){
