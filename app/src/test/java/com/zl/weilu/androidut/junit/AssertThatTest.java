@@ -23,16 +23,16 @@ public class AssertThatTest {
 
     @Test
     public void testAssertThat1() throws Exception {
-        assertThat(5, is(6));
+        assertThat(6, is(6));
     }
 
     @Test
     public void testAssertThat2() throws Exception {
-        assertThat("2", nullValue());
+        assertThat(null, nullValue());
     }
 
     @Test
     public void testAssertThat3() throws Exception {
-        assertThat("Hello UT", both(startsWith("Hello")).and(endsWith("AUT")));
+        assertThat("Hello UT", both(startsWith("Hello")).and(endsWith("UT")));
     }
 }

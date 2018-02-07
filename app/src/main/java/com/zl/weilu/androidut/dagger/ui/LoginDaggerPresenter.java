@@ -31,7 +31,7 @@ public class LoginDaggerPresenter extends BaseMVPPresenter<LoginMvpView> {
     private GithubApi mApi;
 
     @Inject
-    LoginDaggerPresenter(GithubApi mApi){
+    public LoginDaggerPresenter(GithubApi mApi){
         this.mApi = mApi;
     }
 

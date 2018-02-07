@@ -43,7 +43,7 @@ public class MockitoStubTest {
         System.out.println(mPerson.getName());
         
         // 抛出异常
-        System.out.println(mPerson.getSex());
+//        System.out.println(mPerson.getSex());
 
     }
 
@@ -60,7 +60,7 @@ public class MockitoStubTest {
         //第一次什么都不做
         mPerson.setSex(1);
         //异常抛出在下面这行
-        mPerson.setSex(1);
+//        mPerson.setSex(1);
     }
     
     @Test

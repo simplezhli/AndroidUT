@@ -9,7 +9,6 @@ import android.widget.CheckBox;
 import android.widget.Toast;
 
 import com.zl.weilu.androidut.R;
-import com.zl.weilu.androidut.dagger.ui.LoginDaggerActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,11 +26,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void jump(View view){
 
-        //startActivity(new Intent(this, LoginActivity.class));
+        startActivity(new Intent(this, LoginActivity.class));
 
 //        startActivity(new Intent(this, LoginMVPActivity.class));
 
-        startActivity(new Intent(this, LoginDaggerActivity.class));
+//        startActivity(new Intent(this, LoginDaggerActivity.class));
     }
 
     public void showToast(View view){

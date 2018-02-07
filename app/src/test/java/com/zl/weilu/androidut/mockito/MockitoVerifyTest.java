@@ -32,8 +32,8 @@ public class MockitoVerifyTest {
         System.out.println(System.currentTimeMillis());
         verify(mPerson, after(1000)).getAge();
         System.out.println(System.currentTimeMillis());
-
-        verify(mPerson, atLeast(2)).getAge();
+        // 抛出异常
+//        verify(mPerson, atLeast(2)).getAge();
     }
 
     @Test

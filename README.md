@@ -16,4 +16,6 @@
 
 - [Android单元测试(七)：MVP与单元测试](http://blog.csdn.net/qq_17766199/article/details/79183901)
 
+- [Android单元测试(八)：Dagger与单元测试](http://blog.csdn.net/qq_17766199/article/details/79277483)
+
 

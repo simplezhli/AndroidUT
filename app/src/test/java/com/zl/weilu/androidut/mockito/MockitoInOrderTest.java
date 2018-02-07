@@ -41,8 +41,8 @@ public class MockitoInOrderTest {
         mInOrder.verify(mPerson).setSex(1);
 
         //执行顺序错误
-        mInOrder.verify(mPerson1).setSex(0);
-        mInOrder.verify(mPerson1).setName("小红");
+//        mInOrder.verify(mPerson1).setSex(0);
+//        mInOrder.verify(mPerson1).setName("小红");
 
     }
 }
