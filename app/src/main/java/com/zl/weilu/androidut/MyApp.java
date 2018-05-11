@@ -32,7 +32,7 @@ public class MyApp extends DaggerApplication {
         
         LogConfiguration config = new LogConfiguration.Builder()
                 .logLevel(BuildConfig.DEBUG ? LogLevel.ALL : LogLevel.NONE)
-                .b().build();
+                .build();
         XLog.init(config);
     }
 
