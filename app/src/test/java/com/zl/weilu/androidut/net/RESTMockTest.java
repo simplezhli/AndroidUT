@@ -30,7 +30,7 @@ import static io.appflate.restmock.utils.RequestMatchers.pathEndsWith;
 import static org.junit.Assert.assertEquals;
 
 /**
- * Created by weilu on 2017/12/23.
+ * Created by weilu on 2018/5/14.
  */
 
 @RunWith(RobolectricTestRunner.class)
@@ -45,7 +45,7 @@ public class RESTMockTest {
     @Before
     public void setUp(){
         ShadowLog.stream = System.out;
-        
+        // 启动服务
         RESTMockServerStarter.startSync(new JVMFileParser());
         
         //定义Http Client,并添加拦截器
@@ -97,14 +97,13 @@ public class RESTMockTest {
 
     @Test
     public void testNotFound() throws Exception {
-        RESTMockServer.whenGET(pathEndsWith("weilu")).thenReturnFile(404, "json/users.json");
+        RESTMockServer.whenGET(pathEndsWith("weilu")).thenReturnString(404, "{message : \"服务器异常\"}");
         mockGithubService.getUser("weilu")
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<User>() {
                     @Override
-                    public void onSubscribe(Disposable d) {
-                    }
+                    public void onSubscribe(Disposable d) {}
 
                     @Override
                     public void onNext(User user) {
@@ -118,8 +117,7 @@ public class RESTMockTest {
                     }
 
                     @Override
-                    public void onComplete() {
-                    }
+                    public void onComplete() {}
                 });
     }
 }
