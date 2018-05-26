@@ -1,5 +1,7 @@
 # AndroidUT
 
+提示：当前为Kotlin版本，Java版本在master分支。
+
 ## 具体说明(已完结)
 
 - [Android单元测试(一)：JUnit框架的使用](http://blog.csdn.net/qq_17766199/article/details/78243176)

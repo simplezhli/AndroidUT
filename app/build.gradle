@@ -1,5 +1,13 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
 apply from: 'jacoco.gradle'
+
+
+kapt {
+    generateStubs = true
+}
 
 android {
     compileSdkVersion 27
@@ -24,7 +32,10 @@ android {
             includeAndroidResources = true
         }
     }
+
 }
+
+
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -34,10 +45,10 @@ dependencies {
     //mockito
     testImplementation "org.mockito:mockito-core:2.8.9"
     //powermock
-    testImplementation "org.powermock:powermock-module-junit4:1.7.3"
-    testImplementation "org.powermock:powermock-module-junit4-rule:1.7.3"
-    testImplementation "org.powermock:powermock-api-mockito2:1.7.3"
-    testImplementation "org.powermock:powermock-classloading-xstream:1.7.3"
+    testImplementation "org.powermock:powermock-module-junit4:1.7.4"
+    testImplementation "org.powermock:powermock-module-junit4-rule:1.7.4"
+    testImplementation "org.powermock:powermock-api-mockito2:1.7.4"
+    testImplementation "org.powermock:powermock-classloading-xstream:1.7.4"
     //robolectric
     testImplementation "org.robolectric:robolectric:3.8"
     testImplementation 'org.robolectric:shadows-support-v4:3.4-rc2'
@@ -70,8 +81,8 @@ dependencies {
         exclude module: 'appcompat-v7'
         exclude module: 'support-v4'
     }
-    annotationProcessor 'com.google.dagger:dagger-compiler:2.13'
-    annotationProcessor 'com.google.dagger:dagger-android-processor:2.13'
+    kapt 'com.google.dagger:dagger-compiler:2.13'
+    kapt 'com.google.dagger:dagger-android-processor:2.13'
 
     testImplementation 'com.github.andrzejchm.RESTMock:android:0.3.1'
     //AssertJ
@@ -85,4 +96,6 @@ dependencies {
     testImplementation 'com.squareup.assertj:assertj-android-appcompat-v7:1.2.0'
     testImplementation 'com.squareup.assertj:assertj-android-design:1.2.0'
     testImplementation 'com.squareup.assertj:assertj-android-recyclerview-v7:1.2.0'
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
