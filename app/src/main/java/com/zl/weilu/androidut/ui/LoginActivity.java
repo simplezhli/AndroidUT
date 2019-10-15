@@ -24,7 +24,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        mTvSendIdentify = (TextView) this.findViewById(R.id.tv_send_identify);
+        mTvSendIdentify = this.findViewById(R.id.tv_send_identify);
 
         mTvSendIdentify.setOnClickListener(new View.OnClickListener() {
             @Override

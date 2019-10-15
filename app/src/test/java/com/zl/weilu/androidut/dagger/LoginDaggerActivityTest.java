@@ -50,10 +50,10 @@ public class LoginDaggerActivityTest {
     public void setUp(){
         ShadowLog.stream = System.out;
         loginActivity = Robolectric.setupActivity(LoginDaggerActivity.class);
-        mTvSendIdentify = (TextView) loginActivity.findViewById(R.id.tv_send_identify);
-        mTvLogin = (TextView) loginActivity.findViewById(R.id.tv_login);
-        mEtMobile = (EditText) loginActivity.findViewById(R.id.et_mobile);
-        mEtIdentify = (EditText) loginActivity.findViewById(R.id.et_identify);
+        mTvSendIdentify = loginActivity.findViewById(R.id.tv_send_identify);
+        mTvLogin = loginActivity.findViewById(R.id.tv_login);
+        mEtMobile = loginActivity.findViewById(R.id.et_mobile);
+        mEtIdentify = loginActivity.findViewById(R.id.et_identify);
     }
 
     @Test

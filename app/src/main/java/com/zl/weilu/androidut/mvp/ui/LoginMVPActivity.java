@@ -20,9 +20,9 @@ public class LoginMVPActivity extends BaseMVPActivity<LoginMvpView, LoginPresent
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        mEtMobile = (EditText) this.findViewById(R.id.et_mobile);
-        mEtIdentify = (EditText) this.findViewById(R.id.et_identify);
-        mTvSendIdentify = (TextView) this.findViewById(R.id.tv_send_identify);
+        mEtMobile = this.findViewById(R.id.et_mobile);
+        mEtIdentify = this.findViewById(R.id.et_identify);
+        mTvSendIdentify = this.findViewById(R.id.tv_send_identify);
 
         this.findViewById(R.id.tv_login).setOnClickListener(this);
         mTvSendIdentify.setOnClickListener(this);

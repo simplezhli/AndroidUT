@@ -7,7 +7,8 @@ import org.junit.Test;
 import java.util.Date;
 import java.util.Map;
 
-import static org.assertj.core.api.Java6Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.*;
 import static org.assertj.core.util.DateUtil.*;
 import static org.assertj.core.util.Lists.newArrayList;
 

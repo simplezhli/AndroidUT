@@ -58,11 +58,11 @@ public class MainActivityTest {
         ShadowLog.stream = System.out;
         // 默认会调用Activity的生命周期: onCreate->onStart->onResume
         mainActivity = Robolectric.setupActivity(MainActivity.class);
-        mJumpBtn = (Button) mainActivity.findViewById(R.id.button1);
-        mToastBtn = (Button) mainActivity.findViewById(R.id.button2);
-        mDialogBtn = (Button) mainActivity.findViewById(R.id.button3);
-        mInverseBtn = (Button) mainActivity.findViewById(R.id.button4);
-        checkBox = (CheckBox) mainActivity.findViewById(R.id.checkbox);
+        mJumpBtn = mainActivity.findViewById(R.id.button1);
+        mToastBtn = mainActivity.findViewById(R.id.button2);
+        mDialogBtn = mainActivity.findViewById(R.id.button3);
+        mInverseBtn = mainActivity.findViewById(R.id.button4);
+        checkBox = mainActivity.findViewById(R.id.checkbox);
     }
 
     /**

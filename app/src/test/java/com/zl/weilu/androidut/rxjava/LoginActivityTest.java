@@ -36,7 +36,7 @@ public class LoginActivityTest {
     @Before
     public void setUp(){
         loginActivity = Robolectric.setupActivity(LoginActivity.class);
-        mTvSendIdentify = (TextView) loginActivity.findViewById(R.id.tv_send_identify);
+        mTvSendIdentify = loginActivity.findViewById(R.id.tv_send_identify);
     }
 
     @Test
