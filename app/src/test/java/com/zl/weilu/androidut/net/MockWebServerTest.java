@@ -2,7 +2,6 @@ package com.zl.weilu.androidut.net;
 
 import android.util.Log;
 
-import com.zl.weilu.androidut.BuildConfig;
 import com.zl.weilu.androidut.bean.User;
 
 import org.junit.Before;
@@ -10,7 +9,6 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.robolectric.RobolectricTestRunner;
-import org.robolectric.annotation.Config;
 import org.robolectric.shadows.ShadowLog;
 
 import java.util.concurrent.TimeUnit;
@@ -35,7 +33,6 @@ import static org.junit.Assert.assertEquals;
  */
 
 @RunWith(RobolectricTestRunner.class)
-@Config(constants = BuildConfig.class, sdk = 23)
 public class MockWebServerTest {
 
     private GithubApi mockGithubService;
@@ -139,7 +136,7 @@ public class MockWebServerTest {
         //验证我们的请求客户端是否按预期生成了请求
         RecordedRequest request = server.takeRequest();
         assertEquals("GET /users/weilu HTTP/1.1", request.getRequestLine());
-        assertEquals("okhttp/3.9.1", request.getHeader("User-Agent"));
+        assertEquals("okhttp/3.12.0", request.getHeader("User-Agent"));
 
         // 关闭服务
         server.shutdown();

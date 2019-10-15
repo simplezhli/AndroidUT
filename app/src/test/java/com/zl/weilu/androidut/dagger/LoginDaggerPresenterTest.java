@@ -1,6 +1,5 @@
 package com.zl.weilu.androidut.dagger;
 
-import com.zl.weilu.androidut.BuildConfig;
 import com.zl.weilu.androidut.MyApp;
 import com.zl.weilu.androidut.dagger.ui.LoginDaggerPresenter;
 import com.zl.weilu.androidut.mvp.ui.LoginMvpView;
@@ -14,7 +13,6 @@ import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnit;
 import org.mockito.junit.MockitoRule;
 import org.robolectric.RobolectricTestRunner;
-import org.robolectric.annotation.Config;
 import org.robolectric.shadows.ShadowLog;
 
 import java.util.concurrent.TimeUnit;
@@ -34,7 +32,6 @@ import static org.mockito.Mockito.verify;
  * Created by weilu on 2018/2/6
  */
 @RunWith(RobolectricTestRunner.class)
-@Config(constants = BuildConfig.class, sdk = 23)
 public class LoginDaggerPresenterTest {
 
     private LoginDaggerPresenter mPresenter;

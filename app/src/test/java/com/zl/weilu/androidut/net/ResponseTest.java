@@ -2,14 +2,12 @@ package com.zl.weilu.androidut.net;
 
 import android.util.Log;
 
-import com.zl.weilu.androidut.BuildConfig;
 import com.zl.weilu.androidut.bean.User;
 
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.robolectric.RobolectricTestRunner;
-import org.robolectric.annotation.Config;
 import org.robolectric.shadows.ShadowLog;
 
 import io.reactivex.Observer;
@@ -29,7 +27,6 @@ import static org.junit.Assert.assertEquals;
  * @Time: 2017/12/22 0022 14:27.
  */
 @RunWith(RobolectricTestRunner.class)
-@Config(constants = BuildConfig.class, sdk = 23)
 public class ResponseTest {
 
     @Before

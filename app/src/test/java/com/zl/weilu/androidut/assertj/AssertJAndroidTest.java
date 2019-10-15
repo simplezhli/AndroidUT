@@ -4,7 +4,6 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.LinearLayout;
 
-import com.zl.weilu.androidut.BuildConfig;
 import com.zl.weilu.androidut.R;
 import com.zl.weilu.androidut.ui.MainActivity;
 
@@ -13,7 +12,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.robolectric.Robolectric;
 import org.robolectric.RobolectricTestRunner;
-import org.robolectric.annotation.Config;
 import org.robolectric.shadows.ShadowLog;
 
 import static org.assertj.android.api.Assertions.assertThat;
@@ -24,7 +22,6 @@ import static org.assertj.android.api.Assertions.assertThat;
  * @Time: 2018/5/15 0015 10:33.
  */
 @RunWith(RobolectricTestRunner.class)
-@Config(constants = BuildConfig.class, sdk = 23)
 public class AssertJAndroidTest {
 
     private MainActivity mainActivity;

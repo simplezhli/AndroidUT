@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 apply from: 'jacoco.gradle'
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion 28
     buildToolsVersion "28.0.3"
     defaultConfig {
         applicationId "com.zl.weilu.androidut"
@@ -28,38 +28,38 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support:appcompat-v7:28.0.0'
     //junit
     testImplementation 'junit:junit:4.12'
     //mockito
-    testImplementation "org.mockito:mockito-core:2.8.9"
+    testImplementation "org.mockito:mockito-core:3.1.0"
     //powermock
-    testImplementation "org.powermock:powermock-module-junit4:1.7.3"
-    testImplementation "org.powermock:powermock-module-junit4-rule:1.7.3"
-    testImplementation "org.powermock:powermock-api-mockito2:1.7.3"
-    testImplementation "org.powermock:powermock-classloading-xstream:1.7.3"
+    testImplementation "org.powermock:powermock-module-junit4:2.0.2"
+    testImplementation "org.powermock:powermock-module-junit4-rule:2.0.2"
+    testImplementation "org.powermock:powermock-api-mockito2:2.0.2"
+    testImplementation "org.powermock:powermock-classloading-xstream:2.0.2"
     //robolectric
-    testImplementation "org.robolectric:robolectric:3.8"
+    testImplementation "org.robolectric:robolectric:4.3.1"
     testImplementation 'org.robolectric:shadows-support-v4:3.4-rc2'
     testImplementation "com.android.support.test:monitor:1.0.2"
     //mockwebserver
-    testImplementation 'com.squareup.okhttp3:mockwebserver:3.9.1'
+    testImplementation 'com.squareup.okhttp3:mockwebserver:3.12.0'
     //RxJava
-    implementation 'io.reactivex.rxjava2:rxjava:2.1.7'
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.2'
     //RxAndroid
-    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'
     //okhttp
-    implementation "com.squareup.okhttp3:okhttp:3.9.1"
+    implementation "com.squareup.okhttp3:okhttp:3.12.0"
     //Retrofit
-    implementation ("com.squareup.retrofit2:retrofit:2.3.0"){
+    implementation ("com.squareup.retrofit2:retrofit:2.6.1"){
         exclude module: 'okhttp'
     }
-    implementation ("com.squareup.retrofit2:adapter-rxjava2:2.3.0"){
+    implementation ("com.squareup.retrofit2:adapter-rxjava2:2.6.1"){
         exclude module: 'rxjava'
     }
-    implementation "com.squareup.retrofit2:converter-gson:2.3.0"
+    implementation "com.squareup.retrofit2:converter-gson:2.6.1"
     //打印Log
-    implementation "com.elvishew:xlog:1.4.0"
+    implementation "com.elvishew:xlog:1.6.1"
     //Dagger
     implementation 'com.google.dagger:dagger:2.13'
     implementation ("com.google.dagger:dagger-android:2.13"){
@@ -75,9 +75,9 @@ dependencies {
 
     testImplementation 'com.github.andrzejchm.RESTMock:android:0.3.1'
     //AssertJ
-    testImplementation 'org.assertj:assertj-core:2.9.1'
+//    testImplementation 'org.assertj:assertj-core:2.9.1'
     //Note that AssertJ 3.x requires at least Java 8 and AssertJ 2.x requires at least Java 7.
-    //testImplementation 'org.assertj:assertj-core:3.10.0'
+    testImplementation 'org.assertj:assertj-core:3.13.2'
 
     //AssertJ-Android module:
     testImplementation 'com.squareup.assertj:assertj-android:1.2.0'

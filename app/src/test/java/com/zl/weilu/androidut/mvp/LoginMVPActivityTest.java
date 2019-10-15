@@ -4,10 +4,9 @@ import android.app.Application;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.zl.weilu.androidut.BuildConfig;
 import com.zl.weilu.androidut.R;
-import com.zl.weilu.androidut.rxjava.RxJavaTestSchedulerRule;
 import com.zl.weilu.androidut.mvp.ui.LoginMVPActivity;
+import com.zl.weilu.androidut.rxjava.RxJavaTestSchedulerRule;
 
 import org.junit.Before;
 import org.junit.Rule;
@@ -16,7 +15,6 @@ import org.junit.runner.RunWith;
 import org.robolectric.Robolectric;
 import org.robolectric.RobolectricTestRunner;
 import org.robolectric.RuntimeEnvironment;
-import org.robolectric.annotation.Config;
 import org.robolectric.shadows.ShadowLog;
 import org.robolectric.shadows.ShadowProgressDialog;
 import org.robolectric.shadows.ShadowToast;
@@ -29,14 +27,14 @@ import io.reactivex.functions.Function;
 import io.reactivex.plugins.RxJavaPlugins;
 import io.reactivex.schedulers.Schedulers;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 
 /**
  * Created by weilu on 2018/1/27.
  */
 @RunWith(RobolectricTestRunner.class)
-@Config(constants = BuildConfig.class, sdk = 23)
 public class LoginMVPActivityTest {
 
     private LoginMVPActivity loginActivity;

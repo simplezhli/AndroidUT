@@ -1,9 +1,8 @@
 package com.zl.weilu.androidut.mvp;
 
-import com.zl.weilu.androidut.BuildConfig;
-import com.zl.weilu.androidut.rxjava.RxJavaTestSchedulerRule;
 import com.zl.weilu.androidut.mvp.ui.LoginMvpView;
 import com.zl.weilu.androidut.mvp.ui.LoginPresenter;
+import com.zl.weilu.androidut.rxjava.RxJavaTestSchedulerRule;
 
 import org.junit.Before;
 import org.junit.Rule;
@@ -13,7 +12,6 @@ import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnit;
 import org.mockito.junit.MockitoRule;
 import org.robolectric.RobolectricTestRunner;
-import org.robolectric.annotation.Config;
 import org.robolectric.shadows.ShadowLog;
 
 import java.util.concurrent.TimeUnit;
@@ -33,7 +31,6 @@ import static org.mockito.Mockito.verify;
  * Created by weilu on 2018/1/27.
  */
 @RunWith(RobolectricTestRunner.class)
-@Config(constants = BuildConfig.class, sdk = 23)
 public class LoginPresenterTest{
 
     private LoginPresenter mPresenter;

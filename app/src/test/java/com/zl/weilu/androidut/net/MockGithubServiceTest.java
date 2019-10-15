@@ -2,7 +2,6 @@ package com.zl.weilu.androidut.net;
 
 import android.util.Log;
 
-import com.zl.weilu.androidut.BuildConfig;
 import com.zl.weilu.androidut.bean.User;
 
 import org.junit.Before;
@@ -10,7 +9,6 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.robolectric.RobolectricTestRunner;
-import org.robolectric.annotation.Config;
 import org.robolectric.shadows.ShadowLog;
 
 import java.net.URISyntaxException;
@@ -27,7 +25,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(RobolectricTestRunner.class)
-@Config(constants = BuildConfig.class, sdk = 23)
 public class MockGithubServiceTest {
 
     private static final String JSON_ROOT_PATH = "/json/";

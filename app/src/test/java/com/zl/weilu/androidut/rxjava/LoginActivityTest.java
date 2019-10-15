@@ -3,7 +3,6 @@ package com.zl.weilu.androidut.rxjava;
 import android.app.Application;
 import android.widget.TextView;
 
-import com.zl.weilu.androidut.BuildConfig;
 import com.zl.weilu.androidut.R;
 import com.zl.weilu.androidut.ui.LoginActivity;
 
@@ -14,11 +13,11 @@ import org.junit.runner.RunWith;
 import org.robolectric.Robolectric;
 import org.robolectric.RobolectricTestRunner;
 import org.robolectric.RuntimeEnvironment;
-import org.robolectric.annotation.Config;
 
 import java.util.concurrent.TimeUnit;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 /**
  * @Description: 测试LoginActivity
@@ -26,7 +25,6 @@ import static org.junit.Assert.*;
  * @Time: 2018/1/6 15:20.
  */
 @RunWith(RobolectricTestRunner.class)
-@Config(constants = BuildConfig.class, sdk = 23)
 public class LoginActivityTest {
 
     private LoginActivity loginActivity;

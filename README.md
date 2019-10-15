@@ -21,3 +21,9 @@
 - [Android单元测试(九)：查漏补缺篇](https://blog.csdn.net/qq_17766199/article/details/80321318)
 
 
+## 更新说明
+
+### 2019.10.15
+
+    1.更新依赖库至最新。
+    2.修改Robolectric配置写法。

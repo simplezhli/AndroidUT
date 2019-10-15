@@ -4,7 +4,6 @@ import android.app.Application;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.zl.weilu.androidut.BuildConfig;
 import com.zl.weilu.androidut.R;
 import com.zl.weilu.androidut.dagger.ui.LoginDaggerActivity;
 import com.zl.weilu.androidut.rxjava.RxJavaTestSchedulerRule;
@@ -16,7 +15,6 @@ import org.junit.runner.RunWith;
 import org.robolectric.Robolectric;
 import org.robolectric.RobolectricTestRunner;
 import org.robolectric.RuntimeEnvironment;
-import org.robolectric.annotation.Config;
 import org.robolectric.shadows.ShadowLog;
 import org.robolectric.shadows.ShadowProgressDialog;
 import org.robolectric.shadows.ShadowToast;
@@ -37,7 +35,6 @@ import static org.junit.Assert.assertNotNull;
  * Created by weilu on 2018/2/6.
  */
 @RunWith(RobolectricTestRunner.class)
-@Config(constants = BuildConfig.class, sdk = 23)
 public class LoginDaggerActivityTest {
 
     private LoginDaggerActivity loginActivity;
