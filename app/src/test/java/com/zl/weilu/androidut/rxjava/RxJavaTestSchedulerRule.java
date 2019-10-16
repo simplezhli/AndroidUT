@@ -4,9 +4,7 @@ import org.junit.rules.TestRule;
 import org.junit.runner.Description;
 import org.junit.runners.model.Statement;
 
-import io.reactivex.Scheduler;
 import io.reactivex.android.plugins.RxAndroidPlugins;
-import io.reactivex.functions.Function;
 import io.reactivex.plugins.RxJavaPlugins;
 import io.reactivex.schedulers.TestScheduler;
 
@@ -27,33 +25,13 @@ public class RxJavaTestSchedulerRule implements TestRule {
         return new Statement() {
             @Override
             public void evaluate() throws Throwable {
-                RxJavaPlugins.setIoSchedulerHandler(new Function<Scheduler, Scheduler>() {
-                    @Override
-                    public Scheduler apply(Scheduler scheduler) throws Exception {
-                        return mTestScheduler;
-                    }
-                });
+                RxJavaPlugins.setIoSchedulerHandler(scheduler -> mTestScheduler);
 
-                RxJavaPlugins.setNewThreadSchedulerHandler(new Function<Scheduler, Scheduler>() {
-                    @Override
-                    public Scheduler apply(Scheduler scheduler) throws Exception {
-                        return mTestScheduler;
-                    }
-                });
+                RxJavaPlugins.setNewThreadSchedulerHandler(scheduler -> mTestScheduler);
 
-                RxJavaPlugins.setComputationSchedulerHandler(new Function<Scheduler, Scheduler>() {
-                    @Override
-                    public Scheduler apply(Scheduler scheduler) throws Exception {
-                        return mTestScheduler;
-                    }
-                });
+                RxJavaPlugins.setComputationSchedulerHandler(scheduler -> mTestScheduler);
 
-                RxAndroidPlugins.setMainThreadSchedulerHandler(new Function<Scheduler, Scheduler>() {
-                    @Override
-                    public Scheduler apply(Scheduler scheduler) throws Exception {
-                        return mTestScheduler;
-                    }
-                });
+                RxAndroidPlugins.setMainThreadSchedulerHandler(scheduler -> mTestScheduler);
 
                 try {
                     base.evaluate();

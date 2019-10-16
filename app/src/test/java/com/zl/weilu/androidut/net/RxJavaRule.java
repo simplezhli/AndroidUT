@@ -4,9 +4,7 @@ import org.junit.rules.TestRule;
 import org.junit.runner.Description;
 import org.junit.runners.model.Statement;
 
-import io.reactivex.Scheduler;
 import io.reactivex.android.plugins.RxAndroidPlugins;
-import io.reactivex.functions.Function;
 import io.reactivex.plugins.RxJavaPlugins;
 import io.reactivex.schedulers.Schedulers;
 
@@ -22,19 +20,9 @@ public class RxJavaRule implements TestRule {
             @Override
             public void evaluate() throws Throwable {
                 RxJavaPlugins.reset();
-                RxJavaPlugins.setIoSchedulerHandler(new Function<Scheduler, Scheduler>() {
-                    @Override
-                    public Scheduler apply(Scheduler scheduler) throws Exception {
-                        return Schedulers.trampoline();
-                    }
-                });
+                RxJavaPlugins.setIoSchedulerHandler(scheduler -> Schedulers.trampoline());
                 RxAndroidPlugins.reset();
-                RxAndroidPlugins.setMainThreadSchedulerHandler(new Function<Scheduler, Scheduler>() {
-                    @Override
-                    public Scheduler apply(Scheduler scheduler) throws Exception {
-                        return Schedulers.trampoline();
-                    }
-                });
+                RxAndroidPlugins.setMainThreadSchedulerHandler(scheduler -> Schedulers.trampoline());
 
                 try {
                     base.evaluate();

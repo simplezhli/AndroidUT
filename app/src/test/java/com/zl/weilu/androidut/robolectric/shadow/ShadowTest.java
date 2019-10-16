@@ -7,9 +7,10 @@ import com.zl.weilu.androidut.bean.Person;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.robolectric.RobolectricTestRunner;
 import org.robolectric.annotation.Config;
 import org.robolectric.shadows.ShadowLog;
+
+import androidx.test.ext.junit.runners.AndroidJUnit4;
 
 import static junit.framework.Assert.assertEquals;
 import static org.robolectric.shadow.api.Shadow.extract;
@@ -19,7 +20,7 @@ import static org.robolectric.shadow.api.Shadow.extract;
  * @Author: weilu
  * @Time: 2017/12/4 13:07.
  */
-@RunWith(RobolectricTestRunner.class)
+@RunWith(AndroidJUnit4.class)
 @Config(shadows = {ShadowPerson.class})
 public class ShadowTest {
 

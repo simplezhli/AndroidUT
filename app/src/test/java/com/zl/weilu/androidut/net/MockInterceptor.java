@@ -28,7 +28,7 @@ public class MockInterceptor implements Interceptor {
 
         String responseString = createResponseBody(chain);
 
-        Response response = new Response.Builder()
+        return new Response.Builder()
                 .code(200)
                 .message(responseString)
                 .request(chain.request())
@@ -36,7 +36,6 @@ public class MockInterceptor implements Interceptor {
                 .body(ResponseBody.create(MediaType.parse("application/json"), responseString.getBytes()))
                 .addHeader("content-type", "application/json")
                 .build();
-        return response;
     }
 
     /**

@@ -12,21 +12,21 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.robolectric.Robolectric;
-import org.robolectric.RobolectricTestRunner;
-import org.robolectric.RuntimeEnvironment;
 import org.robolectric.shadows.ShadowLog;
 import org.robolectric.shadows.ShadowProgressDialog;
 import org.robolectric.shadows.ShadowToast;
 
 import java.util.concurrent.TimeUnit;
 
-import io.reactivex.Scheduler;
+import androidx.lifecycle.Lifecycle;
+import androidx.test.core.app.ActivityScenario;
+import androidx.test.ext.junit.runners.AndroidJUnit4;
 import io.reactivex.android.plugins.RxAndroidPlugins;
-import io.reactivex.functions.Function;
 import io.reactivex.plugins.RxJavaPlugins;
 import io.reactivex.schedulers.Schedulers;
 
+import static androidx.test.core.app.ActivityScenario.launch;
+import static androidx.test.core.app.ApplicationProvider.getApplicationContext;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
@@ -34,10 +34,9 @@ import static org.junit.Assert.assertNotNull;
 /**
  * Created by weilu on 2018/2/6.
  */
-@RunWith(RobolectricTestRunner.class)
+@RunWith(AndroidJUnit4.class)
 public class LoginDaggerActivityTest {
 
-    private LoginDaggerActivity loginActivity;
     private TextView mTvSendIdentify;
     private TextView mTvLogin;
     private EditText mEtMobile;
@@ -49,16 +48,19 @@ public class LoginDaggerActivityTest {
     @Before
     public void setUp(){
         ShadowLog.stream = System.out;
-        loginActivity = Robolectric.setupActivity(LoginDaggerActivity.class);
-        mTvSendIdentify = loginActivity.findViewById(R.id.tv_send_identify);
-        mTvLogin = loginActivity.findViewById(R.id.tv_login);
-        mEtMobile = loginActivity.findViewById(R.id.et_mobile);
-        mEtIdentify = loginActivity.findViewById(R.id.et_identify);
+        ActivityScenario<LoginDaggerActivity> scenario = launch(LoginDaggerActivity.class);
+        scenario.moveToState(Lifecycle.State.CREATED);
+        scenario.onActivity(activity -> {
+            mTvSendIdentify = activity.findViewById(R.id.tv_send_identify);
+            mTvLogin = activity.findViewById(R.id.tv_login);
+            mEtMobile = activity.findViewById(R.id.et_mobile);
+            mEtIdentify = activity.findViewById(R.id.et_identify);
+        });
     }
 
     @Test
     public void testGetIdentify() throws Exception {
-        Application application = RuntimeEnvironment.application;
+        Application application = getApplicationContext();
         assertEquals(mTvSendIdentify.getText().toString(),
                 application.getString(R.string.login_send_identify));
 
@@ -103,19 +105,9 @@ public class LoginDaggerActivityTest {
 
     private void initRxJava() {
         RxJavaPlugins.reset();
-        RxJavaPlugins.setIoSchedulerHandler(new Function<Scheduler, Scheduler>() {
-            @Override
-            public Scheduler apply(Scheduler scheduler) throws Exception {
-                return Schedulers.trampoline();
-            }
-        });
+        RxJavaPlugins.setIoSchedulerHandler(scheduler -> Schedulers.trampoline());
         RxAndroidPlugins.reset();
-        RxAndroidPlugins.setMainThreadSchedulerHandler(new Function<Scheduler, Scheduler>() {
-            @Override
-            public Scheduler apply(Scheduler scheduler) throws Exception {
-                return Schedulers.trampoline();
-            }
-        });
+        RxAndroidPlugins.setMainThreadSchedulerHandler(scheduler -> Schedulers.trampoline());
     }
 
 }

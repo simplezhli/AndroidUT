@@ -6,16 +6,17 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.robolectric.Robolectric;
-import org.robolectric.RobolectricTestRunner;
 import org.robolectric.android.controller.ServiceController;
 import org.robolectric.shadows.ShadowLog;
+
+import androidx.test.ext.junit.runners.AndroidJUnit4;
 
 /**
  * @Description: 自定义服务测试
  * @Author: weilu
  * @Time: 2017/12/4 11:40.
  */
-@RunWith(RobolectricTestRunner.class)
+@RunWith(AndroidJUnit4.class)
 public class MyServiceTest {
 
     private ServiceController<MyService> controller;

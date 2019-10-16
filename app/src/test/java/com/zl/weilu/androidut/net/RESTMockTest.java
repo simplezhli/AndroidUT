@@ -8,9 +8,9 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.robolectric.RobolectricTestRunner;
 import org.robolectric.shadows.ShadowLog;
 
+import androidx.test.ext.junit.runners.AndroidJUnit4;
 import io.appflate.restmock.JVMFileParser;
 import io.appflate.restmock.RESTMockServer;
 import io.appflate.restmock.RESTMockServerStarter;
@@ -31,7 +31,7 @@ import static org.junit.Assert.assertEquals;
  * Created by weilu on 2018/5/14.
  */
 
-@RunWith(RobolectricTestRunner.class)
+@RunWith(AndroidJUnit4.class)
 public class RESTMockTest {
 
     private GithubApi mockGithubService;

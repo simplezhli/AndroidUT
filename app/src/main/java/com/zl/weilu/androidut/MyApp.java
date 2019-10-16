@@ -11,6 +11,8 @@ import javax.inject.Inject;
 import dagger.android.AndroidInjector;
 import dagger.android.support.DaggerApplication;
 
+//import com.zl.weilu.androidut.dagger.base.component.DaggerAppComponent;
+
 /**
  * Created by weilu on 2017/12/3.
  */

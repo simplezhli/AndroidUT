@@ -13,22 +13,23 @@ import com.zl.weilu.androidut.ui.LoginActivity;
 import com.zl.weilu.androidut.ui.MainActivity;
 import com.zl.weilu.androidut.ui.fragment.SampleFragment;
 
-import junit.framework.Assert;
-
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.robolectric.Robolectric;
-import org.robolectric.RobolectricTestRunner;
-import org.robolectric.RuntimeEnvironment;
 import org.robolectric.Shadows;
 import org.robolectric.android.controller.ActivityController;
 import org.robolectric.shadows.ShadowActivity;
 import org.robolectric.shadows.ShadowAlertDialog;
 import org.robolectric.shadows.ShadowLog;
 import org.robolectric.shadows.ShadowToast;
-import org.robolectric.shadows.support.v4.SupportFragmentTestUtil;
 
+import androidx.fragment.app.testing.FragmentScenario;
+import androidx.test.ext.junit.runners.AndroidJUnit4;
+import androidx.test.rule.ActivityTestRule;
+
+import static androidx.test.core.app.ApplicationProvider.getApplicationContext;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
@@ -40,9 +41,12 @@ import static org.junit.Assert.assertTrue;
  * @Author: weilu
  * @Time: 2017/12/3 12:20.
  */
-@RunWith(RobolectricTestRunner.class)
+@RunWith(AndroidJUnit4.class)
 public class MainActivityTest {
 
+    @Rule
+    public ActivityTestRule<MainActivity> activityRule = new ActivityTestRule<>(MainActivity.class);
+    
     private final String TAG = "test";
 
     private MainActivity mainActivity;
@@ -56,8 +60,7 @@ public class MainActivityTest {
     public void setUp(){
         //输出日志
         ShadowLog.stream = System.out;
-        // 默认会调用Activity的生命周期: onCreate->onStart->onResume
-        mainActivity = Robolectric.setupActivity(MainActivity.class);
+        mainActivity = activityRule.getActivity();
         mJumpBtn = mainActivity.findViewById(R.id.button1);
         mToastBtn = mainActivity.findViewById(R.id.button2);
         mDialogBtn = mainActivity.findViewById(R.id.button3);
@@ -70,10 +73,8 @@ public class MainActivityTest {
      */
     @Test
     public void testMainActivity() {
-
         assertNotNull(mainActivity);
         Log.d(TAG, "测试Log输出");
-
     }
 
 
@@ -85,7 +86,7 @@ public class MainActivityTest {
     @Test
     public void testJump() throws Exception {
 
-        Assert.assertEquals(mJumpBtn.getText().toString(), "Activity跳转");
+        assertEquals(mJumpBtn.getText().toString(), "Activity跳转");
         
         // 触发按钮点击
         mJumpBtn.performClick();
@@ -166,10 +167,8 @@ public class MainActivityTest {
      */
     @Test
     public void testFragment() {
-        SampleFragment sampleFragment = new SampleFragment();
-        //添加Fragment到Activity中，会触发Fragment的onCreateView()
-        SupportFragmentTestUtil.startFragment(sampleFragment);
-        assertNotNull(sampleFragment.getView());
+        FragmentScenario<SampleFragment> scenario = FragmentScenario.launch(SampleFragment.class);
+        scenario.onFragment(fragment -> assertNotNull(fragment.getView()));
     }
 
     /**
@@ -177,7 +176,7 @@ public class MainActivityTest {
      */
     @Test
     public void testResources() {
-        Application application = RuntimeEnvironment.application;
+        Application application = getApplicationContext();
         String appName = application.getString(R.string.app_name);
         assertEquals("AndroidUT", appName);
     }
