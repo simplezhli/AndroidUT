@@ -22,6 +22,7 @@
 
 - [Android单元测试(九)：查漏补缺篇](https://blog.csdn.net/qq_17766199/article/details/80321318)
 
+- [Android单元测试(十)：内容更新篇](https://weilu.blog.csdn.net/article/details/102992559)
 
 ## 更新说明
 
@@ -29,3 +30,7 @@
 
     1.更新依赖库至最新。
     2.修改Robolectric配置写法。
+    
+### 2019.10.21
+
+    1.适配AndroidX。

@@ -34,15 +34,16 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.appcompat:appcompat:1.1.0'
-    // Core library
-    testImplementation 'androidx.test:core:1.2.0'
     implementation 'androidx.fragment:fragment-testing:1.1.0'
     testImplementation 'androidx.fragment:fragment-testing:1.1.0'
+    // Core library
+    testImplementation 'androidx.test:core:1.2.0'
     // AndroidJUnitRunner and JUnit Rules
     testImplementation 'androidx.test:runner:1.2.0'
     testImplementation 'androidx.test:rules:1.2.0'
     testImplementation 'androidx.test.ext:junit:1.1.1'
     testImplementation 'androidx.test.ext:truth:1.2.0'
+    testImplementation 'androidx.test:monitor:1.2.0'
     testImplementation 'com.google.truth:truth:1.0'
     //junit
     testImplementation 'junit:junit:4.12'
@@ -74,20 +75,27 @@ dependencies {
     //打印Log
     implementation "com.elvishew:xlog:1.6.1"
     //Dagger
-    implementation 'com.google.dagger:dagger:2.13'
-    implementation ("com.google.dagger:dagger-android:2.13"){
+    implementation 'com.google.dagger:dagger:2.24'
+    implementation ("com.google.dagger:dagger-android:2.24"){
         exclude module: 'support-annotations'
     }
-    implementation ("com.google.dagger:dagger-android-support:2.13"){
+    implementation ("com.google.dagger:dagger-android-support:2.24"){
         exclude module: 'support-annotations'
         exclude module: 'appcompat-v7'
         exclude module: 'support-v4'
     }
-    annotationProcessor 'com.google.dagger:dagger-compiler:2.13'
-    annotationProcessor 'com.google.dagger:dagger-android-processor:2.13'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.24'
+    annotationProcessor 'com.google.dagger:dagger-android-processor:2.24'
 
     testImplementation 'com.github.andrzejchm.RESTMock:android:0.3.1'
     //AssertJ
     testImplementation 'org.assertj:assertj-core:3.13.2'
 
+}
+
+// https://github.com/google/dagger/issues/306
+gradle.projectsEvaluated {
+    tasks.withType(JavaCompile) {
+        options.compilerArgs << "-Xmaxerrs" << "500"
+    }
 }
