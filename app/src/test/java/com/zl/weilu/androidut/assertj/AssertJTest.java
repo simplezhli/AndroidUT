@@ -37,7 +37,7 @@ public class AssertJTest {
         // 判断正则匹配  
         assertThat("weilu").matches("..i.u").doesNotMatch(".*d");
         // as指定错误信息
-        assertThat("weilu").as("没有a或者b").contains("a").contains("b");
+        // assertThat("weilu").as("没有a或者b").contains("a").contains("b");
     }
 
     @Test
