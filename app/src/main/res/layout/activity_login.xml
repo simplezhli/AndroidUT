@@ -63,6 +63,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:maxLength="6"
                 android:textSize="@dimen/textSize_16sp"
                 android:background="@null"
                 android:hint="@string/login_identify_hint"

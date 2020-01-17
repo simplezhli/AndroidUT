@@ -23,7 +23,7 @@ import dagger.android.support.AndroidSupportInjectionModule;
         AndroidSupportInjectionModule.class})
 public interface AppComponent extends AndroidInjector<MyApp> {
 
-    @Component.Builder
-    abstract class Builder extends AndroidInjector.Builder<MyApp> {}
+    @Component.Factory
+    abstract class Factory implements AndroidInjector.Factory<MyApp> {}
 
 }

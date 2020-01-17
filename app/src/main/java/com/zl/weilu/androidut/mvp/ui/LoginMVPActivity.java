@@ -46,7 +46,7 @@ public class LoginMVPActivity extends BaseMVPActivity<LoginMvpView, LoginPresent
 
     @Override
     public void loginSuccess() {
-        showToast("登录成功");
+        
     }
 
     @Override

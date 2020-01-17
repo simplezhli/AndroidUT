@@ -26,11 +26,17 @@
 
 ## 更新说明
 
+### 2020.01.16
+
+    1.完善jacoco配置。
+    2.dagger 使用`@Component.Factory` 替换 `@Component.Builder` 。
+    
+### 2019.10.21
+    
+    1.适配AndroidX。（support部分暂停维护）
+
 ### 2019.10.15
 
     1.更新依赖库至最新。
     2.修改Robolectric配置写法。
     
-### 2019.10.21
-
-    1.适配AndroidX。

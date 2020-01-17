@@ -42,7 +42,7 @@ public class LoginDaggerActivity extends BaseMVPDaggerActivity<LoginMvpView, Log
 
     @Override
     public void loginSuccess() {
-        showToast("登录成功");
+        
     }
 
     @Override
