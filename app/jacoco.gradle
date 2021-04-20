@@ -1,7 +1,7 @@
 apply plugin: 'jacoco'
 
 jacoco {
-    toolVersion = "0.8.5" //指定jacoco的版本
+    toolVersion = "0.8.6" //指定jacoco的版本
     reportsDir = file("$buildDir/JacocoReport") //指定jacoco生成报告的文件夹
 }
 
@@ -35,7 +35,7 @@ task jacocoTestReport(type: JacocoReport, dependsOn: 'testDebugUnitTest') {
             
     def mainSrc = "${project.projectDir}/src/main/java" //指定源码目录
 
-    sourceDirectories = files([mainSrc])
-    classDirectories = files([debugTree])
-    executionData = files("${buildDir}/jacoco/testDebugUnitTest.exec") //指定报告数据的路径
+    sourceDirectories.from files([mainSrc])
+    classDirectories.from files([debugTree])
+    executionData.from files("${buildDir}/jacoco/testDebugUnitTest.exec") //指定报告数据的路径
 }
