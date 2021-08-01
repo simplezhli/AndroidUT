@@ -5,8 +5,10 @@ jacoco {
     reportsDir = file("$buildDir/JacocoReport") //指定jacoco生成报告的文件夹
 }
 
+// https://github.com/gradle/gradle/issues/5184
 tasks.withType(Test) {
     jacoco.includeNoLocationClasses = true
+    jacoco.excludes = ['jdk.internal.*']
 }
 
 android {
